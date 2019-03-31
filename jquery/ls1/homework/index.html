@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <label>City:
+        <input type="text" id="city"/>
+    </label>
+    <button>Weather</button>
+    <h3 id="result"></h3>
+
+    <script>
+         $(document).ready(function() {
+            $("button").click(function(){
+                var key = '63378948805ef20c5c0dbb2917b68502';
+                var city = document.getElementById('city').value;
+                $.post(`https://api.openweathermap.org/data/2.5/find?q=${city}&appid=${key}&units=metric`, function(data){
+                    console.log(data);
+                    document.getElementById('result').innerHTML =  data.list[0].main.temp;
+                });
+            });
+         });
+    </script>
+</body>
+</html>
