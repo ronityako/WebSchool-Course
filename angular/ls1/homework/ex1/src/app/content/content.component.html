@@ -1,0 +1,6 @@
+<h1  [style.color]="color">{{data}}</h1>
+<button (click)="change1()">Change1</button>
+<button (click)="change2()">Change2</button>
+<button (click)="change3()">Change3</button>
+
+<input type="text" #inp [style.backgroundColor]="bgColor" (keyup)="changeColor(inp.value)"/>
