@@ -1,0 +1,23 @@
+<div id="tasksBoard">
+  <h1>לוח המשימות שלי</h1>
+  <label>שם משימה:
+    <input type="text" #tskName (keyup)="taskName = tskName.value"/>
+  </label>
+  <label>תאריך:
+    <input type="text" #tskDate (keyup)="taskDate = tskDate.value"/>
+  </label>
+  <label>תיאור:
+      <input type="text" #tskDisc (keyup)="taskDisc = tskDisc.value"/>
+  </label>
+  <button (click)="addTask()">צור משימה</button>
+  <div id="notes">
+  <div *ngFor="let task of tasksArr">
+    <div class="note animated fadeInDown">
+      <p>{{task.name}}</p>
+      <p>{{task.date}}</p>
+      <p>{{task.disc}}</p>
+    </div>
+  </div>
+</div>
+
+</div>
