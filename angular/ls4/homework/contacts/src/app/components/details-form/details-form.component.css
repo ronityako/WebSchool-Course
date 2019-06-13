@@ -1,0 +1,23 @@
+div{
+    text-align: center;
+    direction: rtl;
+}
+
+button{
+    display: block;
+    margin: auto;
+    padding: 3px 20px;
+}
+
+label{
+    margin: 10px;
+}
+h1{
+    color:#2fcaca;
+    background-color: #646767;
+    padding: 10px;
+}
+
+#inputs{
+    margin-bottom: 20px;
+}

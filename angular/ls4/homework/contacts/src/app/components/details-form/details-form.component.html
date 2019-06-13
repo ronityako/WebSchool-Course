@@ -1,0 +1,17 @@
+<div>
+  <h1>אנשי קשר</h1>
+  <div id="inputs">
+    <label>שם:
+      <input #usr_name type="text"/>
+    </label>
+    <label>טלפון:
+      <input #usr_tel type="number"/>
+    </label>
+    <label>אימייל:
+      <input #usr_mail type="email"/>
+    </label>
+  </div>
+  <button (click)="addContact(usr_name.value, usr_tel.value, usr_mail.value)">הוסף</button>
+</div>
+
+<app-contacts-table [contactsList]="contactsArr"></app-contacts-table>
