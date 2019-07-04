@@ -1,0 +1,40 @@
+<div>
+    <h1>התחברות לחשבון בנק ישראל</h1>
+    <p class="font">ניתן להתחבר באמצעות הזדהות וקבלת קוד אישי לנייד</p>
+    <form #f="ngForm" (ngSubmit)="submitForm(f.valid)" class="font">
+        <p class="sameRow">סוג מזהה*</p>
+        <input #ID="ngModel" [(ngModel)]="user.idType" id="id" name="idType" value="id" type="radio" required/>
+        <label for="id">תעודת זהות</label>
+        <input [(ngModel)]="user.idType" id="passport" name="idType" value="pp" type="radio" required/>
+        <label for="passport">דרכון</label>
+        <input [(ngModel)]="user.idType" id="hp" name="idType" value="hp" type="radio" required/>
+        <label for="hp">ח.פ.</label>
+        <div class="errorMsg" *ngIf="!ID.valid && ID.errors.required">חובה לבחור סוג מזהה</div>
+        <label id="idNum" class="passrow">מספר מזהה*
+            <input #idNum="ngModel" [(ngModel)]="user.idNum" name="idNum" type="text" minlength="9" maxlength="9" required/>
+        </label>
+        <div class="errorMsg" *ngIf="!idNum.valid && idNum.errors.minlength && idNum.dirty">המספר חייב להיות בן 9 ספרות</div>
+        <!-- <div class="errorMsg" *ngIf="!idNum.valid && idNum.errors.maxlength && idNum.dirty">המספר חייב להיות בן 9 ספרות</div> -->
+        <div class="errorMsg" *ngIf="!idNum.valid && idNum.errors.required && idNum.dirty">זהו שדה חובה</div>
+        <hr/>
+        <p>ברצוני לקבל את קוד הכניסה ל-</p>
+        <input id="phone" type="radio" name="getcode" value="phone" checked>
+        <label for="phone">נייד</label>
+        <input id="mail" type="radio" name="getcode" value="mail">
+        <label for="mail">מייל</label>
+        <label class="passrow">טלפון נייד*
+            <input #phoneNum="ngModel" [(ngModel)]="user.phone" name="phoneNum" minlength="8" type="text" required>
+        </label>
+        <div class="errorMsg" *ngIf="!phoneNum.valid && phoneNum.errors.minlength && phoneNum.dirty">המספר חייב להיות לפחות בן 8 ספרות</div>
+        <div class="errorMsg" *ngIf="!phoneNum.valid && phoneNum.errors.required && phoneNum.dirty">זהו שדה חובה</div>
+        <hr/>
+        <hr/>
+        <input #confirm="ngModel" [(ngModel)]="user.conform" name="confirm" id="confirm" type="checkbox" value="confirm" required>
+        <label for="confirm">
+            <a href="#">אני מאשר שקראתי את תנאי השימוש באתר</a>
+        </label>
+        <div class="errorMsg" *ngIf="!confirm.valid && confirm.errors.required">חובה לאשר</div>
+        <input [disabled]="!f.valid" id="button" type="submit" class="passrow">
+
+    </form>
+</div>
