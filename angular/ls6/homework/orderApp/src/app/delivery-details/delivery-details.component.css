@@ -1,0 +1,17 @@
+#form{
+    direction: rtl;
+    text-align: center;
+    border: 1px black solid;
+    width: 250px;
+    padding:20px;
+}
+label{
+    display: block;
+    margin-top: 20px;
+}
+.errorMsg{
+    color: red;
+}
+button{
+    margin-top: 50px;
+}

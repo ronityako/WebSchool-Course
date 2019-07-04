@@ -1,0 +1,7 @@
+div{
+    direction: rtl;
+    text-align: center;
+    border: 1px black solid;
+    width: 200px;
+    padding:20px;
+}

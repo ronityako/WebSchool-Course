@@ -1,0 +1,19 @@
+<div id="form">
+    <h1>פרטי הזמנה</h1>
+
+    <form #f="ngForm" (ngSubmit)="gotoDeliveryDetails(f.valid)"> 
+        <label>שם
+            <input #usrName="ngModel" type="text" [(ngModel)]="order.name" name="name" required/>
+        </label>
+        <div class="errorMsg" *ngIf="!usrName.valid && usrName.errors.required && usrName.dirty">זהו שדה חובה</div>
+        <label>טלפון
+            <input #usrPhone="ngModel" type="text" [(ngModel)]="order.phone" minlength="9" maxlengh="10" name="phone"  required/>
+        </label>
+        <div class="errorMsg" *ngIf="!usrPhone.valid && usrPhone.errors.required && usrPhone.dirty">זהו שדה חובה</div>
+        <div class="errorMsg" *ngIf="!usrPhone.valid && usrPhone.errors.minlength && usrPhone.dirty">מספר קצר מידי</div>
+        <label>אימייל
+            <input type="email" [(ngModel)]="order.email" name="email"/>
+        </label>
+        <button>הבא</button>
+    </form>
+</div>

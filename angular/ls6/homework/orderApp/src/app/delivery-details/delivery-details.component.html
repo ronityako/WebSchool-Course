@@ -1,0 +1,20 @@
+<div id="form">
+    <h1>פרטי משלוח</h1>
+
+    <form #f="ngForm" (ngSubmit)="gotoOrderAccepted(f.valid)">
+        <label>עיר
+            <input type="text" #usrCity="ngModel" [(ngModel)]="delivery.city" name="city" required/>
+        </label>
+        <div class="errorMsg" *ngIf="!usrCity.valid && usrCity.errors.required && usrCity.dirty">זהו שדה חובה</div>
+        <label>כתובת
+            <input type="text" #usrAddress="ngModel" [(ngModel)]="delivery.add" name="add" required/>
+        </label>
+        <div class="errorMsg" *ngIf="!usrAddress.valid && usrAddress.errors.required && usrAddress.dirty">זהו שדה חובה</div>
+        <label>מיקוד
+            <input type="text" #usrCode="ngModel" [(ngModel)]="delivery.pCode" name="pCode" required minlength="5" maxlength="5"/>
+        </label>
+        <div class="errorMsg" *ngIf="!usrCode.valid && usrCode.errors.required && usrCode.dirty">זהו שדה חובה</div>
+        <div class="errorMsg" *ngIf="!usrCode.valid && usrCode.errors.minlength && usrCode.dirty">השדה חייב להכיל 5 תוים</div>
+        <button>הבא</button>
+    </form>
+</div>
