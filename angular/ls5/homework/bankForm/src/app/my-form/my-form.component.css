@@ -1,0 +1,36 @@
+div{
+    display: inline-block;
+    width: 60%;
+}
+.passrow{
+    display: block;
+}
+.font{
+    font-family: Arial;
+}
+#button{
+    background-image: linear-gradient(black, blue);
+    border-radius: 16px;
+    width: 80px; 
+    padding: 5px;
+    color: #fff;
+    margin: auto;
+    width: 120px;
+    margin-top: 30px;
+    
+}
+
+.sameRow{
+    display: inline-block;
+    margin: 0;
+}
+
+.errorMsg{
+    color: red;
+    display: block;
+}
+
+#idNum{
+    margin-top: 10px;
+}
+
